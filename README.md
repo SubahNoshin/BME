@@ -118,3 +118,4 @@ After training, the model is evaluated on the test dataset as follows:
 ![image alt](https://github.com/SubahNoshin/BME/blob/fa37e3676cf43b53abf09fe191a490eb33eca39f/loss_curve.png)
 ![image alt](https://github.com/SubahNoshin/BME/blob/b991c7d2fd14447779b3668e47130db121b1fdc4/accuracy_curve.png)
 ![image alt](https://github.com/SubahNoshin/BME/blob/b991c7d2fd14447779b3668e47130db121b1fdc4/Confusion_matrix.png)
+[Watch Weight Evolution Video](https://github.com/SubahNoshin/BME/blob/f868f13b5d0c5d5efbaf0b10be9c053b45d8989d/weight_updates/04_conv1d_23_updates.gif)
