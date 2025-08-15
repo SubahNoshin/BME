@@ -116,4 +116,4 @@ After training, the model is evaluated on the test dataset as follows:
 
 8. **Visualize Confusion Matrix**  
    - Displayed as a heatmap for easy visual analysis of predictions versus true labels.
-![Loss Curve](https://github.com/SubahNoshin/BME/blob/fa37e3676cf43b53abf09fe191a490eb33eca39f/loss_curve.png)
+<img src = "https://github.com/SubahNoshin/Health-Monitor/blob/main/splash.jpg" height = "400px" width="200px">
