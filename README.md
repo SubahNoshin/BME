@@ -61,5 +61,59 @@ The preprocessing pipeline converts raw protein sequences and secondary structur
      - **Training:** 70%  
      - **Validation:** 15%  
      - **Test:** 15%  
+### Model Training
 
+The CNN model is trained using the following steps:
+
+1. **Build the 1D CNN Model**  
+   - Architecture: `Conv1D → Dropout → Conv1D → Dropout → Conv1D (softmax per residue)`.  
+   - Designed for **per-residue secondary structure prediction**.
+
+2. **Compile the Model**  
+   - **Loss function:** `categorical_crossentropy`  
+   - **Optimizer:** `adam`  
+   - **Metric:** `accuracy`
+
+3. **Train the Model**  
+   - Use the training dataset with a validation set for monitoring performance.  
+   - Batch size and number of epochs are configurable.
+
+4. **Generate Accuracy and Loss Plots**  
+   - Training and validation accuracy/loss are plotted over epochs to visualize model learning.
+
+5. **Visualize Conv1D Kernel Weights**  
+   - At the end of each epoch, the first Conv1D layer weights are visualized.  
+   - A **GIF of weight evolution** is saved: `weights_frames/weights_evolution.gif`.
+
+---
+
+### Model Evaluation
+
+After training, the model is evaluated on the test dataset as follows:
+
+1. **Load the Trained Model**  
+   - Load saved model weights and architecture for predictions.
+
+2. **Prepare Test Data**  
+   - Test sequences are one-hot encoded and padded to match the maximum sequence length.
+
+3. **Predict Secondary Structures**  
+   - The model outputs a probability distribution per residue over the classes (`H`, `C`, `B`).  
+   - The predicted class for each residue is the one with the highest probability.
+
+4. **Flatten Sequences for Analysis**  
+   - Flatten predicted and true labels to a 1D array.  
+   - Remove padding to focus only on real residues.
+
+5. **Compute Per-Residue Accuracy**  
+   - Measures the proportion of correctly predicted residues.
+
+6. **Generate Confusion Matrix**  
+   - Shows how residues of each true class are predicted, highlighting misclassifications.
+
+7. **Produce Classification Report**  
+   - Reports **precision**, **recall**, and **F1-score** for each class (`H`, `C`, `B`).
+
+8. **Visualize Confusion Matrix**  
+   - Displayed as a heatmap for easy visual analysis of predictions versus true labels.
 
