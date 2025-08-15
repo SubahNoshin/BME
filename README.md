@@ -34,13 +34,32 @@ This project uses a **1D Convolutional Neural Network (CNN)** to predict protein
 ## Data Preparation
 
 1. Place your **FASTA sequences** in the `data/` folder (e.g., `sequence.fasta`).  
-2. Place corresponding **SS2 secondary structure files** in a separate folder (e.g., `data/ss2/`), with filenames matching sequence IDs in the FASTA file.
+2. Place corresponding **SS2 secondary structure files** in a separate folder (e.g., `protein structures`), with filenames matching sequence IDs in the FASTA file.
 
----
+## Data Preprocessing
 
-## Usage
+The preprocessing pipeline converts raw protein sequences and secondary structure annotations into a format suitable for CNN training:
 
-### 1. Preprocessing & One-hot Encoding
-```bash
-python scripts/preprocess.py
+1. **Amino Acid Encoding**
+   - Encode each amino acid (20 common residues: `ACDEFGHIKLMNPQRSTVWY`) as a **one-hot vector**.  
+   - Each protein sequence becomes a **matrix of shape `(max_len, 20)`**.  
+   - Sequences shorter than `max_len` are **padded with zeros**.
+
+2. **Secondary Structure Mapping**
+   - Map secondary structure labels to integers:
+     - `H` → 0 (Helix)  
+     - `C` → 1 (Coil)  
+     - `B` → 2 (Strand/Beta-sheet)  
+   - Shorter sequences are **padded with `1` (Coil)** to match `max_len`.
+
+3. **One-hot Encoding of Labels**
+   - Use **Keras `to_categorical`** to convert integer labels to one-hot format.  
+   - Resulting shape: `(num_sequences, max_len, 3)`.
+
+4. **Train/Validation/Test Split**
+   - Split dataset into:
+     - **Training:** 70%  
+     - **Validation:** 15%  
+     - **Test:** 15%  
+
 
