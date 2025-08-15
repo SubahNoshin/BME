@@ -1,3 +1,6 @@
+
+
+![image alt](https://github.com/SubahNoshin/BME/blob/fa37e3676cf43b53abf09fe191a490eb33eca39f/loss_curve.png)
 # Protein Secondary Structure Prediction with CNN
 
 This project implements a **1D Convolutional Neural Network (CNN)** to predict **protein secondary structures** from amino acid sequences. The pipeline includes data preprocessing, model training, evaluation, and visualization of training dynamics.
@@ -116,4 +119,4 @@ After training, the model is evaluated on the test dataset as follows:
 
 8. **Visualize Confusion Matrix**  
    - Displayed as a heatmap for easy visual analysis of predictions versus true labels.
-<img src = "https://github.com/SubahNoshin/BME/blob/fa37e3676cf43b53abf09fe191a490eb33eca39f/loss_curve.png">
+
