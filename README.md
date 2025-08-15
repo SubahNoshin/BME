@@ -1,6 +1,6 @@
 
 
-![image alt](https://github.com/SubahNoshin/BME/blob/fa37e3676cf43b53abf09fe191a490eb33eca39f/loss_curve.png)
+
 # Protein Secondary Structure Prediction with CNN
 
 This project implements a **1D Convolutional Neural Network (CNN)** to predict **protein secondary structures** from amino acid sequences. The pipeline includes data preprocessing, model training, evaluation, and visualization of training dynamics.
@@ -23,12 +23,8 @@ This project implements a **1D Convolutional Neural Network (CNN)** to predict *
 - seaborn
 - imageio
 
-Install dependencies via pip:
 
-```bash
-pip install tensorflow numpy biopython scikit-learn matplotlib seaborn imageio
-
-# Protein Secondary Structure Prediction with CNN
+## Protein Secondary Structure Prediction with CNN
 
 This project uses a **1D Convolutional Neural Network (CNN)** to predict protein secondary structures from amino acid sequences. It includes preprocessing, model training, evaluation, and visualization of Conv1D weight evolution.
 
@@ -119,4 +115,6 @@ After training, the model is evaluated on the test dataset as follows:
 
 8. **Visualize Confusion Matrix**  
    - Displayed as a heatmap for easy visual analysis of predictions versus true labels.
-
+![image alt](https://github.com/SubahNoshin/BME/blob/fa37e3676cf43b53abf09fe191a490eb33eca39f/loss_curve.png)
+![image alt](https://github.com/SubahNoshin/BME/blob/b991c7d2fd14447779b3668e47130db121b1fdc4/accuracy_curve.png)
+![image alt](https://github.com/SubahNoshin/BME/blob/b991c7d2fd14447779b3668e47130db121b1fdc4/Confusion_matrix.png)
